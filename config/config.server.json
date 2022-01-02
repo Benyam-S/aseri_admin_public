@@ -1,23 +1,23 @@
 {
   "redis_client": {
-    "user": "default",
-    "password": "zdfY55ACGnHKo7DJ",
-    "address": "aseri-redis-do-user-7425836-0.b.db.ondigitalocean.com",
+    "user": "*******",
+    "password": "***************",
+    "address": "************",
     "port": "25061",
     "database": "0"
   },
   "mysql_client": {
-    "user": "doadmin",
-    "password": "T2ICSaiqovlgQIsg",
-    "address": "aseri-db-do-user-7425836-0.b.db.ondigitalocean.com",
+    "user": "********",
+    "password": "**************",
+    "address": "***************",
     "port": "25060",
-    "database": "defaultdb"
+    "database": "*********"
   },
   "cookie_name": "aseri_user_session",
   "secret_key": "aseri_secret_key",
-  "super_admin_email": "binysimayehu@gmail.com",
+  "super_admin_email": "*************@gmail.com",
   "http_domain_address": "localhost",
-  "bot_domain_address": "10.116.0.4",
+  "bot_domain_address": "***.****.****.****",
   "http_client_server_port": "443",
   "bot_client_server_port": "443",
   "server_log_file": "server.log",
