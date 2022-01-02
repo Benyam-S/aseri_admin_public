@@ -1,0 +1,53 @@
+#search-result-table .tooltip-div .tooltiptext {
+  background-color: white;
+  color: var(--dark-black-shade, #333333);
+  padding: 10px 10px;
+  border-radius: 3px;
+  font-size: 13px !important;
+  position: fixed;
+  z-index: 1;
+}
+
+#select-extra-div {
+  display: flex;
+  flex-direction: column;
+}
+
+#status-menu {
+  position: fixed;
+  margin-left: -40px;
+  display: none;
+}
+
+#status-menu p {
+  font-size: 14px;
+  padding: 6px 30px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#status-menu i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+#status-menu p:hover {
+  background-color: var(--background-color, #f1f1f1);
+}
+
+#status-menu p:hover i {
+  color: var(--primary-color, #0073aa);
+}
+
+.selected-status {
+  background-color: var(--background-color, #f1f1f1) !important;
+}
+
+.selected-status i {
+  color: var(--primary-color, #0073aa) !important;
+}

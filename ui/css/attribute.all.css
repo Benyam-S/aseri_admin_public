@@ -1,0 +1,64 @@
+#result-section {
+  padding: 20px 0 10px;
+}
+
+#result-section label {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+#result-sector-section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.scrollable-section {
+  max-height: 33vh;
+  overflow-y: auto;
+}
+
+.scrollable-section .tooltiptext {
+  top: 0;
+  right: 100%;
+  width: 80px;
+}
+
+.scrollable-section .tooltip-div {
+  cursor: pointer;
+}
+
+.scrollable-section .error-400 {
+  padding-top: 10px;
+}
+
+.scrollable-section .error-400 i {
+  font-size: 40px;
+}
+
+.scrollable-section .error-400 p:nth-child(1) {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.scrollable-section .error-400 p:nth-child(2) {
+  font-size: 15px;
+}
+
+.scrollable-section .error {
+  font-weight: lighter;
+}
+
+#result-both-section {
+  width: 90%;
+  margin: 20px auto 0;
+}
+
+.delete-container p:nth-child(1) {
+  color: black;
+  font-weight: 600;
+}
+
+.delete-container p:nth-child(1) span {
+  color: var(--error-color, #e62600);
+  font-weight: 600;
+}

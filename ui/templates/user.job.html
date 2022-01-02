@@ -1,0 +1,76 @@
+{{ define "User Job Modal" }}
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="user-job"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="user-job-title"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="user-job-title">User Job History</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <section id="user-job-section">
+          <input id="hidden-user-id" type="hidden" />
+          <table class="table result-table" id="user-job-table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col"></th>
+                <th scope="col">Type</th>
+                <th scope="col">Sector</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+
+            <tbody id="uj-table-body" class="result-table-body"></tbody>
+          </table>
+
+          {{ template "Search Noresult" "uj-noresult-div" }} 
+          
+          {{ template "Error 500" "view-ujerror-div" }}
+
+        </section>
+
+        <div id="uj-pagination-div" class="pagination-div">
+          <div>
+            <span
+              onclick="previousJobs()"
+              class="material-icons"
+              id="uj-prev-icon"
+              >arrow_left</span
+            >
+          </div>
+
+          <div>
+            <span
+              onclick="nextJobs()"
+              class="material-icons"
+              id="uj-next-icon"
+              >arrow_right</span
+            >
+          </div>
+        </div>
+
+        <div style="height: 40px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

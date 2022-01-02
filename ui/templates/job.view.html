@@ -1,0 +1,365 @@
+{{ define "Job View"}}
+
+<section id="view-section">
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="job-detail"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="job-detail-title"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="job-detail-title">Job Detail</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div id="job-detail-container" class="view-profile-container">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <div class="clearfix">
+                  <div class="view-label float-left">
+                    <label for="view-job-title">Job Title</label>
+                    <i class="custom-icon icon-title"></i>
+                  </div>
+  
+                  <div class="view-label float-right removable" id="view-contact-type-group">
+                    <label>Contact Type</label>
+                    <i id="view-contact-type"></i>
+                  </div>
+
+                  <div class="view-label float-right removable" id="view-contact-info-group">
+                    <label>Contact Info: </label>
+                    <span id="view-contact-info"></span>
+                  </div>
+                </div>
+                <div>
+                  <p
+                    id="view-job-title"
+                    style="font-size: 20px; text-align: center"
+                  ></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <div class="view-label">
+                  <label for="view-job-desc">Job Description</label>
+                  <i class="custom-icon icon-infomation"></i>
+                </div>
+                <textarea
+                  disabled
+                  class="form-control"
+                  rows="3"
+                  id="view-job-desc"
+                >
+                </textarea>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-4" id="view-job-id-group">
+                <div class="view-label">
+                  <label for="view-job-id">Job ID</label>
+                  <i class="custom-icon icon-verify"></i>
+                </div>
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-job-id"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group col-md-4" id="view-job-created-group">
+                <div class="view-label">
+                  <label for="view-job-created">Created At</label>
+                  <i class="custom-icon icon-past"></i>
+                </div>
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-job-created"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group col-md-4 removable" id="view-job-employer-group">
+                <div class="view-label">
+                  <label for="view-job-employer">Employer</label>
+                  <i class="custom-icon icon-sheriff"></i>
+                </div>
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-job-employer"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group col-md-12 removable" id="view-job-link-group">
+                <div class="view-label">
+                  <label for="view-job-link">Link</label>
+                  <i class="custom-icon icon-chain"></i>
+                </div>
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-job-link"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-4 removable" id="view-job-type-group">
+                <div class="view-label">
+                  <label for="view-job-type">Job Type</label>
+                  <i class="custom-icon icon-settings"></i>
+                </div>
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-job-type"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group col-md-4 removable" id="view-job-education-group">
+                <div class="view-label">
+                  <label for="view-job-education">Education</label>
+                  <i
+                    class="custom-icon icon-mortarboard"
+                    style="font-weight: 600"
+                  ></i>
+                </div>
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-job-education"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group col-md-4 removable" id="view-job-experience-group">
+                <div class="view-label">
+                  <label for="view-job-experience">Experience</label>
+                  <i class="custom-icon icon-experience"></i>
+                </div>
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-job-experience"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-6 removable" id="view-job-sector-group">
+                <div class="view-label">
+                  <label for="view-job-sector">Sector</label>
+                  <i class="custom-icon icon-address"></i>
+                </div>
+
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-job-sector"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group col-md-6 removable" id="view-job-gender-group">
+                <div class="view-label">
+                  <label>Gender</label>
+                  <i class="custom-icon icon-gender"></i>
+                </div>
+                <div class="view-radio-container">
+                  <div class="view-radio">
+                    <div>
+                      <input
+                      disabled
+                      type="radio"
+                      name="job-gender"
+                      id="view-jobgender-both"
+                    />
+                    <span> Both</span>
+                    </div>
+                  </div>
+
+                  <div class="view-radio">
+                    <div>
+                      <input
+                      disabled
+                      type="radio"
+                      name="job-gender"
+                      id="view-jobgender-male"
+                    />
+                    <span> Male</span>
+                    </div>
+                  </div>
+
+                  <div class="view-radio">
+                    <div>
+                      <input
+                      disabled
+                      type="radio"
+                      name="job-gender"
+                      id="view-jobgender-female"
+                    />
+                    <span> Female</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-6 removable" id="view-due-date-group">
+                <div class="view-label">
+                  <label for="view-due-date">Due Date</label>
+                  <i class="custom-icon icon-due-date"></i>
+                </div>
+
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-due-date"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group col-md-6" id="view-post-type-group">
+                <div class="view-label">
+                  <label for="view-post-type">Post Type</label>
+                  <i class="custom-icon icon-post"></i>
+                </div>
+
+                <div>
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control"
+                    id="view-post-type"
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <div class="container clearfix">
+            <div class="float-right">
+              <button
+                type="button"
+                class="btn btn-lg btn-success"
+                data-toggle="modal"
+                href="#change-status-modal"
+                onclick="initChangeJobStatus('approve', 'view')"
+              >
+                Approve
+              </button>
+            </div>
+
+            <div class="float-left">
+              <button
+                type="button"
+                class="btn btn-lg btn-danger"
+                data-toggle="modal"
+                href="#change-status-modal"
+                onclick="initChangeJobStatus('decline', 'view')"
+              >
+                Decline
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {{ template "Error 500" "view-error-div" }}
+
+        <div id="view-modal-spacer" style="height: 40px"></div>
+      </div>
+    </div>
+  </div>
+
+  {{ template "Change Status Modal" }} 
+  
+  {{ template "User View Modal" }}
+</section>
+
+{{ end }} 
+
+
+
+{{ define "Change Status Modal" }}
+
+<div class="modal fade" id="change-status-modal" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Process Job</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-hidden="true"
+          onclick="(()=>{$('#job-detail').css('overflow-y', 'auto')})()"
+        >
+          ×
+        </button>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+
+        <div id="change-status-container">
+          <input id="target-job-id" type="hidden" />
+          <input id="change-status-from" type="hidden" />
+            Are you sure you want to <span id="target-job-status"></span> this
+            job!
+          </p>
+        </div>
+
+        {{ template "Error 400" "change-status-error" }}
+        
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-primary" onclick="changeJobStatus(this)">Proceed</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end}}

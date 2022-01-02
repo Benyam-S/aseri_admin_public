@@ -1,0 +1,86 @@
+{{ define "Attribute All"}}
+
+<section id="result-section">
+
+  <section id="result-sector-section" class="col-md-12">
+    <label>Job Sectors</label>
+    <section class="scrollable-section" id="scrollable-sector-section">
+      <table class="table result-table" id="result-sector-table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">
+              <div class="tooltip-div" onclick="initAddJobAttribute('sector')">
+                <span class="material-icons">addchart</span>
+                <span class="tooltiptext">add sector</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody id="table-sector-body" class="result-table-body"></tbody>
+      </table>
+
+      {{ template "Search Noresult" "noresult-sector-div" }}
+
+    </section>
+  </section>
+
+  <section class="row" id="result-both-section">
+    <section id="result-type-section" class="col-md-6">
+      <label>Job Types</label>
+      <section class="scrollable-section" id="scrollable-type-section">
+        <table class="table result-table" id="result-type-table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">
+                <div class="tooltip-div" onclick="initAddJobAttribute('type')">
+                  <span class="material-icons">addchart</span>
+                  <span class="tooltiptext">add type</span>
+                </div>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody id="table-type-body" class="result-table-body"></tbody>
+        </table>
+
+        {{ template "Search Noresult" "noresult-type-div" }}
+
+      </section>
+    </section>
+
+    <section id="result-level-section" class="col-md-6">
+      <label>Education Levels</label>
+      <section class="scrollable-section" id="scrollable-level-section">
+        <table class="table result-table" id="result-level-table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">
+                <div class="tooltip-div" onclick="initAddJobAttribute('level')">
+                  <span class="material-icons">addchart</span>
+                  <span class="tooltiptext">add level</span>
+                </div>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody id="table-level-body" class="result-table-body"></tbody>
+        </table>
+
+        {{ template "Search Noresult" "noresult-level-div" }}
+
+      </section>
+    </section>
+  </section>
+
+  {{ template "Error 500" "result-error-div" }} 
+
+</section>
+
+{{ end }}

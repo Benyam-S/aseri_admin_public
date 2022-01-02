@@ -1,0 +1,14 @@
+{{ define "Success 200" }}
+
+<div id="{{ . }}" class="success-200">
+  <div>
+    <i class="custom-icon icon-success"></i>
+  </div>
+
+  <div>
+    <p>Successful!</p>
+    <p id="{{ . }}-msg"></p>
+  </div>
+</div>
+
+{{ end }}

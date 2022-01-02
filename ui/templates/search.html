@@ -1,0 +1,58 @@
+{{ define "Searchbar" }}
+
+<div class="row bg-light col-md-10" id="search-div">
+  <input
+    class="form-control col-md-9"
+    id="search-bar"
+    type="search"
+    onkeydown="searchKeyBind(event)"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <div class="col-md-3 pl-lg-5">
+    <button
+      onclick="search(this)"
+      id="search-button"
+      class="btn my-2 my-md-0 btn-block"
+      type="submit"
+    >
+      Search
+    </button>
+  </div>
+</div>
+
+{{ end }} 
+
+
+{{ define "Pagination"}}
+
+<div id="pagination-div" class="pagination-div">
+  <div>
+    <span onclick="previous()" class="material-icons" id="prev-icon"
+      >arrow_left</span
+    >
+  </div>
+
+  <div>
+    <span onclick="next()" class="material-icons" id="next-icon"
+      >arrow_right</span
+    >
+  </div>
+</div>
+
+{{ end }} 
+
+
+{{ define "Search Noresult" }}
+
+<div id="{{ . }}" class="error-400">
+  <div>
+    <i class="custom-icon icon-search-right mb-3"></i>
+  </div>
+  <div>
+    <p>Nothing!</p>
+    <p id="{{ . }}-msg"></p>
+  </div>
+</div>
+
+{{ end }}

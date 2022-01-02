@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Users</title>
+
+    {{ template "HeadO"}} 
+    
+    {{ template "Header_link" }}
+
+    <link rel="stylesheet" href="../../ui/css/user.search.css" />
+    <link rel="stylesheet" href="../../ui/css/bulk.import.css" />
+
+    <script src="../../ui/js/lib/jszip.js"></script>
+    <script src="../../ui/js/lib/xlsx.js"></script>
+
+    <script src="../../ui/js/user.search.js"></script>
+    <script src="../../ui/js/user.view.js"></script>
+    <script src="../../ui/js/user.delete.js"></script>
+    <script src="../../ui/js/user.job.js"></script>
+    <script src="../../ui/js/bulk.import.js"></script>
+  </head>
+
+  <body>
+    {{ template "Header" . }}
+
+    <main>
+
+        {{ template "User Search"}}
+
+        {{ template "User View"}}
+
+        {{ template "User Delete"}}
+
+        {{ template "User Job Modal"}}
+
+        {{ template "Profile"}}
+
+    </main>
+  </body>
+</html>

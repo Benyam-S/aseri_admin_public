@@ -1,0 +1,68 @@
+main {
+  background-color: var(--background-color, #f1f1f1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 90px;
+  height: 100vh;
+}
+
+#logo-img-div {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#logo-img-div img {
+  width: 150px;
+}
+
+#login-form {
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0 0 1px black;
+  padding: 10px 30px 30px;
+  width: 320px;
+  font-family: var(--roboto-font);
+}
+
+#login-form label {
+  display: block;
+  margin-bottom: 2px;
+  margin-top: 20px;
+  color: var(--dark-black-shade, #333333);
+  font-weight: 500;
+  font-size: 13.5px;
+}
+
+#login-form input {
+  width: 100%;
+  border-radius: var(--md-border-radius, 5px);
+  border: solid 1px var(--light-black-shade, #8c8c8c);
+  box-sizing: border-box;
+  padding: 5px 10px;
+  background-color: rgba(0, 169, 247, 0.1);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+#login-form input:focus {
+  outline: none;
+  border: 2.2px solid #007db8;
+}
+
+#login-button {
+  border: none;
+  background-color: var(--primary-color, #0073aa);
+  color: white;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: var(--sm-border-radius, 5px);
+  float: right;
+  outline: none;
+  margin-top: 10px;
+}
+
+#login-button:hover {
+  background-color: var(--primary-color-shade1,#006391);
+  transition: all 0.3s ease-out;
+}

@@ -1,0 +1,127 @@
+{{ define "Job Search"}}
+
+<section id="search-section">
+  <section id="search-bar-section" class="row">
+    {{ template "Searchbar" }}
+
+    <div class="row col-md-2">
+      <div
+        id="view-all-btn"
+        tabindex="0"
+        onkeypress="onEnter(event)"
+        onclick="viewAll()"
+        class="tooltip-div"
+      >
+        <span class="material-icons">
+          apps
+        </span>
+        <span
+          class="tooltiptext"
+          style="left: 50%; width: 60px; top: 45px; margin-left: -25px;"
+          >view all</span
+        >
+      </div>
+
+      <div
+        class="toggle-menu-parent"
+        id="change-status"
+        onclick="showStatusMenu()"
+      >
+        <div class="tooltip-div">
+          <span class="material-icons">
+            stars
+          </span>
+          <span class="tooltiptext" style="left: 100%; width: 90px; top: 0px;"
+            >change status</span
+          >
+        </div>
+
+        <div class="card toggle-menu" id="status-menu">
+          <p onclick="changeStatus(this)" id="status-pending">
+            <i class="material-icons">pending</i><span>Pending</span>
+          </p>
+          <p onclick="changeStatus(this)" id="status-opened">
+            <i class="material-icons">offline_bolt</i><span>Opened</span>
+          </p>
+          <p onclick="changeStatus(this)" id="status-closed">
+            <i class="material-icons">check_circle</i><span>Closed</span>
+          </p>
+          <p onclick="changeStatus(this)" id="status-declined">
+            <i class="material-icons">cancel</i><span>Declined</span>
+          </p>
+          <p onclick="changeStatus(this)" id="status-all">
+            <i class="material-icons">group_work</i><span>All</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="search-result-section">
+    <div id="search-loading-div" style="display: none;">
+      <span class="spinner-border" role="status"></span>
+    </div>
+    <table class="table result-table" id="search-result-table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col"></th>
+          <th scope="col">Employer</th>
+          <th scope="col">Type</th>
+          <th scope="col">Sector</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody id="search-table-body" class="result-table-body"></tbody>
+    </table>
+
+    {{ template "Error 500" "search-error-div" }} 
+    
+    {{ template "Search Noresult" "search-noresult-div" }}
+
+  </section>
+
+  {{ template "Pagination" }}
+
+  {{ template "Bulk Import" }}
+
+  <div
+    class="modal fade"
+    id="push-job"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="push-job-title"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="push-job-title">Push Job</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+
+          {{ template "Success 200" "push-success-div" }}
+
+          {{ template "Error 400" "push-error-div" }}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{{ end }}

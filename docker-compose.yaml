@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+    container_name: admin-container
+    ports:
+      - "443:443"
+    tty: true
+    volumes:
+      - "/root/aseri/assets:/aseri/assets"
+      - "/root/aseri/config:/aseri/config"
+      - "/root/aseri/log:/aseri/log"
+      - "/root/aseri/ui:/aseri/ui"

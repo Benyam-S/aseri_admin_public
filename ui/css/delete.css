@@ -1,0 +1,39 @@
+.delete-container {
+  padding: 10px 20px 10px;
+}
+
+.delete-container p:nth-child(1) {
+  color: var(--error-color, #e62600);
+  font-weight: 600;
+}
+
+.delete-container p:nth-child(2) {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.delete-container label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.delete-container input {
+  font-size: 20;
+  padding: 5px 40px 5px 10px !important;
+}
+
+.delete-modal .error-400 i {
+  font-size: 70px;
+}
+
+.delete-modal .error-400 p:nth-child(1) {
+  font-size: 25px;
+}
+
+.delete-modal .error-400 p:nth-child(2) {
+  font-size: 18px;
+}
+
+.delete-modal .error-400 {
+  margin-bottom: 30px;
+}

@@ -1,0 +1,57 @@
+.view-profile-pic {
+  background-image: url("../../ui/images/user.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+}
+
+.view-profile-container {
+  padding: 20px;
+}
+
+.view-profile-container label {
+  font-weight: 600;
+  padding-left: 2px;
+}
+
+.view-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.view-label label {
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+.view-label i {
+  font-size: 20px;
+}
+
+.view-radio-container {
+  display: table;
+  width: 100%;
+  table-layout: auto;
+}
+
+.view-radio {
+  display: table-cell;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.view-radio > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-radio input {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}

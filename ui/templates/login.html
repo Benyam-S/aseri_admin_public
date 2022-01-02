@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Log In</title>
+
+    {{ template "HeadO"}} 
+
+    <link rel="stylesheet" href="../../ui/css/login.css" />
+    <script src="../../ui/js/common.js"></script>
+    <script src="../../ui/js/login.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <div id="logo-img-div">
+        <img src="../../ui/images/aseri logo transparent.png" alt="logo" />
+      </div>
+
+      <div id="login-form">
+        <label for="identifier">Email or Phone number</label>
+        <input class="outlined" type="text" name="identifier" id="identifier" />
+
+        <label for="password">Password</label>
+        <div class="password-div">
+          <input
+            class="outlined"
+            type="password"
+            name="password"
+            id="password"
+          />
+          <i
+            onclick="passwordVisibility(this)"
+            class="custom-icon icon-visible"
+          ></i>
+        </div>
+
+        <p id="login-error" class="error">Incorrect password or identifier!</p>
+
+        <div>
+          <button onclick="login(this)" id="login-button">Log In</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

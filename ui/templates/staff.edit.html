@@ -1,0 +1,233 @@
+{{ define "Staff Edit"}}
+
+<section id="edit-section">
+  <div id="edit-member-container" class="card resizable-card edit-container">
+    <div id="edit-member-head" class="edit-container-head">
+      <p>Edit Staff Member</p>
+    </div>
+
+    <form id="edit-member-body" class="edit-container-body">
+      <div>
+        <div id="edit-profile-pic">
+          <input
+            hidden
+            id="edit-uploader"
+            type="file"
+            onchange="editPreviewPhoto(this)"
+          />
+          <input type="hidden" id="edit-hidden-profile" />
+
+          <div>
+            <div id="edit-upload-photo" onclick="editUploadPhoto()">
+              <span class="material-icons">add</span>
+              <span>Upload</span>
+            </div>
+
+            <div id="edit-remove-photo" onclick="editRemovePhoto()">
+              <span class="material-icons">clear</span>
+              <span>Remove</span>
+            </div>
+
+            <div id="edit-reload-photo" onclick="editReloadPhoto()">
+              <span class="material-icons">refresh</span>
+              <span>Reload</span>
+            </div>
+
+            <div id="edit-uploading-photo"></div>
+          </div>
+        </div>
+
+        <p
+          class="error"
+          id="edit-photo-error"
+          style="text-align: center; margin-bottom: 20px;"
+        ></p>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="edit-first-name">First Name</label>
+          <input type="text" class="form-control" id="edit-first-name" />
+          <p class="error" id="edit-fname-error"></p>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="edit-last-name">Last Name</label>
+          <input type="text" class="form-control" id="edit-last-name" />
+          <p class="error" id="edit-lname-error"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="edit-phone-number">Phone Number</label>
+          <input type="tel" class="form-control" id="edit-phone-number" />
+          <p class="error" id="edit-phone-error"></p>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="edit-member-email">Email</label>
+          <input type="email" class="form-control" id="edit-member-email" />
+          <p class="error" id="edit-email-error"></p>
+        </div>
+      </div>
+
+      <div class="row card" id="edit-disabled-group">
+        <div class="form-group col-md-4">
+          <label for="edit-member-id">ID</label>
+          <input
+            disabled
+            type="text"
+            class="form-control"
+            id="edit-member-id"
+          />
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="edit-member-role">Role</label>
+          <input
+            disabled
+            type="text"
+            class="form-control"
+            id="edit-member-role"
+          />
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="edit-member-password">Password</label>
+          <div class="password-div">
+            <input
+              disabled
+              type="text"
+              class="form-control"
+              id="edit-member-password"
+            />
+            <span
+              tabindex="0"
+              onkeydown="onEnter(event)"
+              onclick="initEditChangePassword()"
+              class="material-icons"
+              >published_with_changes</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="error" id="edit-member-error"></p>
+      </div>
+
+      <button
+        onclick="editStaff(this)"
+        class="btn btn-lg btn-block btn-primary w-75"
+      >
+        <span>UPDATE</span>
+        <span class="material-icons">edit</span>
+      </button>
+    </form>
+
+    {{ template "Error 500" "edit-error-div" }}
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="edit-password-modal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="edit-password-title"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="edit-password-title">
+            Change Member Password
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <form class="modal-body">
+          <div id="edit-password-container">
+            <div>
+              <p>
+                Are you sure you want to change the password of the selected
+                staff member with ID <span id="edit-password-id"></span> !
+              </p>
+
+              <p>To proceed enter the current admin password</p>
+            </div>
+
+            <div class="form-group w-75">
+              <label for="edit-admin-password">Current Admin Password</label>
+              <div class="password-div">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="edit-admin-password"
+                />
+                <i
+                  onclick="passwordVisibility(this)"
+                  class="custom-icon icon-visible"
+                ></i>
+              </div>
+              <p class="error" id="edit-adpassword-error"></p>
+            </div>
+
+            <div class="form-group w-75">
+              <label for="edit-new-password">New Password</label>
+              <div class="password-div">
+                <input
+                  autocomplete="new-password"
+                  type="password"
+                  class="form-control"
+                  id="edit-new-password"
+                />
+                <i
+                  onclick="passwordVisibility(this)"
+                  class="custom-icon icon-visible"
+                ></i>
+              </div>
+              <p class="error" id="edit-nwpassword-error"></p>
+            </div>
+
+            <div class="form-group w-75">
+              <label for="edit-verify-password">Verify Password</label>
+              <input
+                autocomplete="new-password"
+                type="password"
+                class="form-control"
+                id="edit-verify-password"
+              />
+              <p class="error" id="edit-vrpassword-error"></p>
+            </div>
+          </div>
+
+          <div>
+            <p class="error" id="edit-modal-error"></p>
+          </div>
+        </form>
+
+        <div class="modal-footer">
+          <button
+            onclick="changeStaffPassword(this)"
+            id="edit-password-btn"
+            type="button"
+            class="btn btn-primary"
+          >
+            Change
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,173 @@
+body {
+  --background-color: #f1f1f1;
+  --logo-color: #2e293d;
+  --navbar-color: #3c4b64;
+  --navbar-color-shade: #303c54;
+  --primary-color: #0073aa;
+  --primary-color-shade1: #006391;
+  --text-color-light: #e3e3e3;
+  --roboto-font: "Roboto", sans-serif;
+  --sm-border-radius: 3px;
+  --md-border-radius: 5px;
+  --primary-border-color: rgba(0, 0, 0, 0.125);
+  --light-border-color: #d8dbe0;
+  --lignt-black-shade: #8c8c8c;
+  --dark-black-shade: #333333;
+  --icon-color-shade: #787878;
+  --error-color: #e62600;
+  --main-font-size: 13.3px;
+  --inner-wsection-width: 600px;
+
+  background-color: var(--background-color, #f1f1f1);
+}
+
+.disabled-button {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.password-div {
+  position: relative;
+  margin: 0px;
+  padding: 0;
+}
+
+.password-div i,
+.password-div span {
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  cursor: pointer;
+  color: var(--primary-color-shade1, #006391);
+}
+
+.password-div i:hover,
+.password-div span:hover {
+  color: black;
+}
+
+.password-div input {
+  padding: 5px 40px 5px 10px !important;
+}
+
+/* Tooltip container */
+.tooltip-div {
+  position: relative;
+}
+
+.tooltip-div .tooltiptext {
+  visibility: hidden;
+  background-color: var(--dark-black-shade, #333333);
+  color: #fff;
+  text-align: center;
+  padding: 3px 5px;
+  border: solid 1.3px var(--light-border-color, #d8dbe0);
+  font-size: 12px !important;
+  font-weight: normal !important;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip-div:hover .tooltiptext {
+  animation-name: tooltip-animation;
+  animation-duration: 6s;
+}
+
+.required-asterisk {
+  color: red;
+}
+
+.info-icons {
+  color: var(--primary-color, #0073aa);
+  cursor: pointer;
+}
+
+@keyframes tooltip-animation {
+  20% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+.rating-checked {
+  color: orange;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+  transition: all 0.3s ease;
+}
+
+.rotate-reverse {
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+
+.width-600 {
+  width: 600px;
+}
+
+.toggle-menu {
+  z-index: 1;
+}
+
+/* +++++++++++++++++++++++++++++++ Scrollbar  +++++++++++++++++++++++++++++++*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px grey;
+  border-radius: 10px;
+  /* background: #f1f1f1; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* +++++++++++++++++++++++++++++++++++++ media query +++++++++++++++++++++++++++++++++++++ */
+@media (max-width: 576px) {
+  .resizable-card {
+    width: 400px !important;
+  }
+
+  .error-500 i,
+  .error-400 i {
+    font-size: 60px !important;
+  }
+
+  .error-500 p:nth-child(1) {
+    font-size: 40px !important;
+  }
+
+  .error-400 p:nth-child(1) {
+    font-size: 25px !important;
+  }
+
+  .error-500 p:nth-child(2) {
+    font-size: 20px !important;
+  }
+
+  .error-400 p:nth-child(2) {
+    font-size: 16px !important;
+  }
+
+  .width-600 {
+    width: auto;
+  }
+}

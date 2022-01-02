@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feedbacks</title>
+
+    {{ template "HeadO"}} 
+    
+    {{ template "Header_link" }}
+
+    <script src="../../ui/ajax/libs/moment.js"></script>
+
+    <link rel="stylesheet" href="../../ui/css/feedback.search.css" />
+
+    <script src="../../ui/js/feedback.search.js"></script>
+    <script src="../../ui/js/feedback.view.js"></script>
+
+  </head>
+
+  <body>
+    {{ template "Header" . }}
+
+    <main>
+
+        {{ template "Feedback Search"}}
+
+        {{ template "Feedback View"}}
+
+        {{ template "Profile"}}
+
+    </main>
+  </body>
+</html>

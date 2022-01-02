@@ -1,0 +1,66 @@
+#add-section {
+  display: none;
+}
+
+.add-container {
+  width: 550px;
+  margin: 50px auto;
+}
+
+.add-container-head p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px 15px;
+  border-bottom: solid 1px var(--light-border-color, #d8dbe0);
+  margin-bottom: 20px;
+}
+
+.add-container-body {
+  padding: 15px 20px 20px;
+}
+
+.add-container-body > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 10px;
+}
+
+.add-container-body > button span {
+  margin-right: 5px;
+}
+
+.add-container-body label {
+  font-weight: 600;
+  padding-left: 2px;
+}
+
+.add-modal {
+  padding: 20px 25px;
+}
+
+.add-modal-success p {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.add-modal-success span {
+  font-size: 14px;
+  color: var(--primary-color-shade1, #006391);
+}
+
+.add-modal .error-400 {
+  margin-bottom: 30px;
+}
+
+.add-modal .error-400 i {
+  font-size: 70px;
+}
+
+.add-modal .error-400 p:nth-child(1) {
+  font-size: 25px;
+}
+
+.add-modal .error-400 p:nth-child(2) {
+  font-size: 18px;
+}

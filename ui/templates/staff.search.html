@@ -1,0 +1,80 @@
+{{ define "Staff Search"}}
+
+<section id="search-section">
+  <section id="search-bar-section" class="row">
+    {{ template "Searchbar" }}
+
+    <div class="row col-md-2">
+      <div
+        id="view-all-btn"
+        tabindex="0"
+        onkeypress="onEnter(event)"
+        onclick="viewAll()"
+        class="tooltip-div"
+      >
+        <span class="material-icons">
+          apps
+        </span>
+        <span
+          class="tooltiptext"
+          style="left: 50%; width: 60px; top: 45px; margin-left: -25px;"
+          >view all</span
+        >
+      </div>
+
+      <div class="toggle-menu-parent" id="change-role" onclick="showRoleMenu()">
+        <div class="tooltip-div">
+          <span class="material-icons">
+            person_search
+          </span>
+          <span class="tooltiptext" style="left: 100%; width: 80px; top: 0px;"
+            >change role</span
+          >
+        </div>
+
+        <div class="card toggle-menu" id="role-menu">
+          <p onclick="changeRole(this)" id="role-admin">
+            <i class="custom-icon icon-admin"></i><span>Admin</span>
+          </p>
+          <p onclick="changeRole(this)" id="role-staff">
+            <i class="custom-icon icon-settings"></i><span>Staff</span>
+          </p>
+          <p onclick="changeRole(this)" id="role-both">
+            <i class="custom-icon icon-circle"></i><span>Both</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="search-result-section">
+    <div id="search-loading-div" style="display: none;">
+      <span class="spinner-border" role="status"></span>
+    </div>
+    <table class="table result-table" id="search-result-table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col"></th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone number</th>
+          <th scope="col">Role</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody id="search-table-body" class="result-table-body"></tbody>
+    </table>
+
+    {{ template "Error 500" "search-error-div" }} 
+    
+    {{ template "Search Noresult" "search-noresult-div" }}
+
+  </section>
+
+  {{ template "Pagination" }}
+</section>
+
+{{ end }}

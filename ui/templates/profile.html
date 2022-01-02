@@ -1,0 +1,277 @@
+{{ define "Profile"}}
+
+<section id="profile-section">
+  <div id="profile-container" class="card resizable-card">
+    <div id="profile-head">
+      <p>User Profile</p>
+    </div>
+
+    <form id="profile-body">
+      <div>
+        <div id="user-profile-pic">
+          <input
+            hidden
+            id="profile-uploader"
+            type="file"
+            accept="image/*"
+            onchange="profilePreviewPhoto(this)"
+          />
+          <input type="hidden" id="profile-hidden-pic" />
+
+          <div>
+            <div id="profile-upload-photo" onclick="profileUploadPhoto()">
+              <span class="material-icons">add</span>
+              <span>Upload</span>
+            </div>
+
+            <div id="profile-remove-photo" onclick="profileRemovePhoto()">
+              <span class="material-icons">clear</span>
+              <span>Remove</span>
+            </div>
+
+            <div id="profile-reload-photo" onclick="profileReloadPhoto()">
+              <span class="material-icons">refresh</span>
+              <span>Reload</span>
+            </div>
+
+            <div id="profile-uploading-photo"></div>
+          </div>
+        </div>
+
+        <p
+          class="error"
+          id="profile-photo-error"
+          style="text-align: center; margin-bottom: 20px;"
+        ></p>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="profile-first-name">First Name</label>
+          <input type="text" class="form-control" id="profile-first-name" />
+          <p class="error" id="profile-fname-error"></p>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="profile-last-name">Last Name</label>
+          <input type="text" class="form-control" id="profile-last-name" />
+          <p class="error" id="profile-lname-error"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="profile-phone-number">Phone Number</label>
+          <input type="tel" class="form-control" id="profile-phone-number" />
+          <p class="error" id="profile-phone-error"></p>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="profile-email">Email</label>
+          <input type="email" class="form-control" id="profile-email" />
+          <p class="error" id="profile-email-error"></p>
+        </div>
+      </div>
+
+      <div class="row card" id="profile-disabled-group">
+        <div class="form-group col-md-4">
+          <label for="profile-id">ID</label>
+          <input disabled type="text" class="form-control" id="profile-id" />
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="profile-role">Role</label>
+          <input disabled type="text" class="form-control" id="profile-role" />
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="profile-password">Password</label>
+          <div class="password-div">
+            <input
+              disabled
+              type="text"
+              class="form-control"
+              id="profile-password"
+            />
+            <span
+              tabindex="0"
+              onkeydown="onEnter(event)"
+              onclick="initProfileChangePassword()"
+              class="material-icons"
+              >published_with_changes</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card row" id="profile-delete-div">
+        <div>
+          <p>
+            Delete User Account
+          </p>
+          <a
+            id="profile-delete-collapser"
+            onclick="initDeleteBody()"
+            data-toggle="collapse"
+            href="#delete-profile-info"
+            role="button"
+            aria-expanded="false"
+            aria-controls="delete-profile-info"
+          >
+            <span class="material-icons">delete</span>
+          </a>
+        </div>
+
+        <div class="collapse" id="delete-profile-info">
+          <div>
+            Deleting your user account will remove all your personal data and
+            sessions from the database. You will be automatically signed out
+            from the system and you will no longer have access to the system
+            using the current account.
+          </div>
+          <br />
+
+          <div class="row">
+            <div class="col-md-8">
+              <label for="delete-profile-password">Current Password</label>
+              <div class="password-div">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="delete-profile-password"
+                />
+                <i
+                  onclick="passwordVisibility(this)"
+                  class="custom-icon icon-visible"
+                ></i>
+              </div>
+              <p class="error" id="delete-prpassword-error"></p>
+            </div>
+
+            <div class="col-md-4 pl-md-4" style="margin-top: 26px;">
+              <button
+                onclick="deleteProfile(this)"
+                class="btn w-100 btn-block btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="error" id="profile-error"></p>
+      </div>
+
+      <button
+        onclick="updateProfile(this)"
+        class="btn btn-lg btn-block btn-primary w-75"
+      >
+        <span>UPDATE</span>
+        <span class="material-icons">edit</span>
+      </button>
+    </form>
+
+    {{ template "Error 500" "profile-error-div" }}
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="profile-password-modal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="profile-password-title"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="profile-password-title">
+            Change Password
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <form class="modal-body">
+          <div id="profile-password-container">
+            <div>
+              <p>Are you sure you want to change your password!</p>
+
+              <p>To proceed enter the current password</p>
+            </div>
+
+            <div class="form-group w-75">
+              <label for="profile-current-password">Current Password</label>
+              <div class="password-div">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="profile-current-password"
+                />
+                <i
+                  onclick="passwordVisibility(this)"
+                  class="custom-icon icon-visible"
+                ></i>
+              </div>
+              <p class="error" id="profile-crpassword-error"></p>
+            </div>
+
+            <div class="form-group w-75">
+              <label for="profile-new-password">New Password</label>
+              <div class="password-div">
+                <input
+                  autocomplete="new-password"
+                  type="password"
+                  class="form-control"
+                  id="profile-new-password"
+                />
+                <i
+                  onclick="passwordVisibility(this)"
+                  class="custom-icon icon-visible"
+                ></i>
+              </div>
+              <p class="error" id="profile-nwpassword-error"></p>
+            </div>
+
+            <div class="form-group w-75">
+              <label for="profile-verify-password">Verify Password</label>
+              <input
+                autocomplete="new-password"
+                type="password"
+                class="form-control"
+                id="profile-verify-password"
+              />
+              <p class="error" id="profile-vrpassword-error"></p>
+            </div>
+          </div>
+
+          <div>
+            <p class="error" id="profile-modal-error"></p>
+          </div>
+        </form>
+
+        <div class="modal-footer">
+          <button
+            onclick="changeUserPassword(this)"
+            id="profile-password-btn"
+            type="button"
+            class="btn btn-primary"
+          >
+            Change
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end}}

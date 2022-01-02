@@ -1,0 +1,76 @@
+{{ define "Staff Delete"}}
+
+<!-- Modal -->
+<div
+  class="modal fade delete-modal"
+  id="delete-staff-member"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="delete-member-title"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delete-member-title">
+          Delete Staff Member
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <form class="modal-body">
+        <div id="delete-member-container" class="delete-container">
+          <div>
+            <p>
+              Are you sure you want to delete the selected staff member with ID
+              <span id="delete-member-id"></span> !
+            </p>
+
+            <p>To proceed enter the current admin password</p>
+          </div>
+
+          <div class="form-group w-75">
+            <label for="delete-password">Password</label>
+
+            <div class="password-div">
+              <input
+                type="password"
+                class="form-control"
+                id="delete-password"
+              />
+              <i
+                onclick="passwordVisibility(this)"
+                class="custom-icon icon-visible"
+              ></i>
+            </div>
+
+            <p class="error" id="delete-password-error"></p>
+          </div>
+        </div>
+
+        {{ template "Error 400" "delete-error-div" }}
+
+      </form>
+
+      <div class="modal-footer">
+        <button
+          onclick="deleteStaff(this)"
+          id="delete-btn"
+          type="button"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

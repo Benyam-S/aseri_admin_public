@@ -1,0 +1,28 @@
+{{ define "Error 500"}}
+
+<div id="{{ . }}" class="error-500">
+  <div>
+    <i class="custom-icon icon-alert"></i>
+  </div>
+  <div>
+    <p>Oops!</p>
+    <p>Something went wrong.</p>
+  </div>
+</div>
+
+{{ end }} 
+
+{{ define "Error 400" }}
+
+<div id="{{ . }}" class="error-400">
+  <div>
+    <i class="custom-icon icon-alert"></i>
+  </div>
+
+  <div>
+    <p>Sorry!</p>
+    <p id="{{ . }}-msg"></p>
+  </div>
+</div>
+
+{{ end }}

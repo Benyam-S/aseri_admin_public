@@ -1,0 +1,183 @@
+{{ define "Header_link" }}
+
+<link rel="stylesheet" href="../../ui/css/header.css" />
+<script src="../../ui/js/header.js"></script>
+
+<link rel="stylesheet" href="../../ui/css/profile.css" />
+<script src="../../ui/js/profile.js"></script>
+
+{{ end }} 
+
+
+{{ define "Header" }}
+
+<header>
+  <nav id="navbar-top">
+    <input type="hidden" name="csrf" id="csrf" value="{{ .CSRFToken }}" />
+    <input type="hidden" id="current-user-id" value="{{ .StaffMember.ID }}" />
+    <input
+      type="hidden"
+      name="page-state"
+      id="page-state"
+      value="{{ .PageState }}"
+    />
+    <input
+      type="hidden"
+      name="display-section"
+      id="display-section"
+      value="{{ .DisplaySection }}"
+    />
+
+    <div id="navbar-top-first">
+      <div class="top-left-item tooltip-div">
+        <i onclick="hideNav()" class="custom-icon icon-open-menu"></i>
+        <span id="hideNav-txt" class="tooltiptext" style="width: 75px;"
+          >hide menu</span
+        >
+      </div>
+
+      <div id="top-logo-div" class="top-left-item">
+        <img
+          class="hide-logo"
+          src="../../ui/images/aseri logo transparent.png"
+          alt="logo"
+        />
+        <div class="hide-logo">አሰሪ</div>
+      </div>
+
+      <div class="top-left-item">
+        <div>
+          <p style="text-transform: capitalize;" id="user-name">
+            {{ .StaffMember.FirstName }} {{ .StaffMember.LastName }}
+          </p>
+          <p style="text-transform: capitalize;" id="staff-role">
+            {{ .StaffMember.Role }}
+          </p>
+          <input
+            type="hidden"
+            id="hidden-role"
+            value="{{ .StaffMember.Role }}"
+          />
+        </div>
+
+        <div onclick="initUserProfile()" class="tooltip-div">
+          <input
+            type="hidden"
+            id="hidden-profile-pic"
+            value="{{ .StaffMember.ProfilePic }}"
+          />
+          <div id="profile-pic"></div>
+          <span class="tooltiptext" style="top: 110%;">profile</span>
+        </div>
+
+        <div onclick="showHeaderMoreMenu(event)" class="toggle-menu-parent">
+          <span class="material-icons align-middle">more_vert</span>
+
+          <div class="card toggle-menu" id="header-more-menu">
+            <p onclick="logout()">
+              <i class="material-icons">exit_to_app</i><span>Log Out</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="navbar-top-last">
+      <div id="uri-div" class="top-last-item">
+        <input id="hidden-uri" type="hidden" value="{{ .URI }}" />
+
+        <div>
+          Home
+        </div>
+
+        <div>/</div>
+
+        <div>
+          {{ .StaffMember.Role }}
+        </div>
+      </div>
+
+      <div id="internal-option-div" class="top-last-item">
+
+        <div class="tooltip-div" onclick="navigate('../../staff/attribute')">
+          <span class="material-icons">business_center</span>
+          <span class="tooltiptext" style="width: 60px; top: 0; right: 100%;"
+            >tools
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <nav id="navbar-left">
+    <div id="close-nav">
+      <i class="custom-icon icon-close" onclick="closeNav()"></i>
+    </div>
+
+    <div id="left-logo-div">
+      <img src="../../ui/images/aseri logo transparent.png" alt="logo" />
+      <div>አሰሪ</div>
+    </div>
+
+    <div id="navbar-left-title">
+      <div>
+        <span style="text-transform: uppercase;">{{ .StaffMember.Role }}</span>
+        MENU
+      </div>
+    </div>
+
+    <div id="navbar-items-conatiner">
+      <span
+        onclick="navigate('../../staff/dashboard')"
+        id="dashboard-link"
+        class="navbar-item"
+      >
+        <i class="custom-icon icon-dashboard"></i>
+        <span class="navbar-item-title">Dashboard</span>
+      </span>
+
+      <span
+        onclick="navigate('../../admin/staff')"
+        id="staff-link"
+        class="navbar-item"
+      >
+        <i class="custom-icon icon-staff"></i>
+        <span class="navbar-item-title">Staff</span>
+      </span>
+
+      <span
+        onclick="navigate('../../staff/user')"
+        id="user-link"
+        class="navbar-item"
+      >
+        <i class="custom-icon icon-group"></i>
+        <span class="navbar-item-title">Users</span>
+      </span>
+
+      <span
+        onclick="navigate('../../staff/job')"
+        id="job-link"
+        class="navbar-item"
+      >
+        <i class="custom-icon icon-verify"></i>
+        <span class="navbar-item-title">Jobs</span>
+      </span>
+
+      <span
+        onclick="navigate('../../staff/feedback')"
+        id="feedback-link"
+        class="navbar-item"
+      >
+        <i class="custom-icon icon-chat"></i>
+        <span class="navbar-item-title">Feedback</span>
+      </span>
+    </div>
+
+    <div id="collapsable-div" onclick="collapse()">
+      <i id="collapse-icon" class="custom-icon icon-back"></i>
+    </div>
+  </nav>
+</header>
+
+{{ end }}

@@ -1,0 +1,42 @@
+.password-div i,
+.password-div span {
+  top: 8px;
+}
+
+#role-menu {
+  position: fixed;
+  margin-left: -40px;
+  display: none;
+}
+
+#role-menu p {
+  font-size: 14px;
+  padding: 6px 30px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#role-menu i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+#role-menu p:hover {
+  background-color: var(--background-color, #f1f1f1);
+}
+
+#role-menu p:hover i {
+  color: var(--primary-color, #0073aa);
+}
+
+.selected-role {
+  background-color: var(--background-color, #f1f1f1) !important;
+}
+
+.selected-role i {
+  color: var(--primary-color, #0073aa) !important;
+}

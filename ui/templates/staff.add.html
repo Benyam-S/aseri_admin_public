@@ -1,0 +1,160 @@
+{{ define "Staff Add"}}
+
+<section id="add-section">
+  <div id="add-member-container" class="card resizable-card add-container">
+    <div id="add-member-head" class="add-container-head">
+      <p>Add Staff Member</p>
+    </div>
+
+    <form id="add-member-body" class="add-container-body">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="add-first-name">First Name</label>
+          <input type="text" class="form-control" id="add-first-name" />
+          <p class="error" id="add-fname-error"></p>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="add-last-name">Last Name</label>
+          <input type="text" class="form-control" id="add-last-name" />
+          <p class="error" id="add-lname-error"></p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="add-member-email">Email</label>
+        <input type="email" class="form-control" id="add-member-email" />
+        <p class="error" id="add-email-error"></p>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-8">
+          <label for="add-phone-number">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="add-phone-number"
+          />
+          <p class="error" id="add-phone-error"></p>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="add-member-role">Role</label>
+          <select class="form-control selectpicker" id="add-member-role">
+            <option selected disabled value="none">SELECT</option>
+            <option value="admin">ADMIN</option>
+            <option value="staff">STAFF</option>
+          </select>
+          <p class="error" id="add-role-error"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="add-member-password">New Password</label>
+          <div class="password-div">
+            <input
+              autocomplete="new-password"
+              type="password"
+              class="form-control"
+              id="add-member-password"
+            />
+            <i
+              onclick="passwordVisibility(this)"
+              class="custom-icon icon-visible"
+            ></i>
+          </div>
+          <p class="error" id="add-password-error"></p>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="add-verify-password">Verify Password</label>
+          <input
+            autocomplete="new-password"
+            type="password"
+            class="form-control"
+            id="add-verify-password"
+          />
+          <p class="error" id="add-vpassword-error"></p>
+        </div>
+      </div>
+
+      <button
+        onclick="addStaff(this)"
+        class="btn btn-lg btn-block btn-primary w-75"
+      >
+        <span>ADD</span>
+        <i class="custom-icon icon-admin"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade add-modal"
+    id="add-member-modal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="add-modal-title"
+    aria-hidden="true"
+    data-backdrop="static"
+    data-keyboard="false"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="add-modal-title">Add Staff Member</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div id="add-modal-success" class="add-modal-success">
+            <p>You have successfully added a new staff member!</p>
+
+            <p>ID: <span id="added-member-id"></span></p>
+            <p>Name: <span id="added-member-name"></span></p>
+            <p>Role: <span id="added-member-role"></span></p>
+          </div>
+
+          <div id="add-modal-admin">
+            <div>
+              <p>
+                A onetime token has been sent to the super admin email address.
+                To proceed please enter the token!
+              </p>
+            </div>
+
+            <div class="form-group w-50">
+              <label for="add-modal-otp">OTP</label>
+              <input type="hidden" id="add-admin-nonce" />
+              <input type="text" class="form-control" id="add-admin-otp" />
+              <p class="error" id="add-otp-error">Incorrect OTP used!</p>
+            </div>
+          </div>
+
+          {{ template "Error 400" "add-modal-error" }}
+        </div>
+
+        <div class="modal-footer">
+          <button
+            onclick="addAdmin(this)"
+            id="delete-btn"
+            type="button"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

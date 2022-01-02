@@ -1,0 +1,242 @@
+@font-face {
+  font-family: 'custom-font';
+  src:  url('fonts/custom-font.eot?x9t6zn');
+  src:  url('fonts/custom-font.eot?x9t6zn#iefix') format('embedded-opentype'),
+    url('fonts/custom-font.ttf?x9t6zn') format('truetype'),
+    url('fonts/custom-font.woff?x9t6zn') format('woff'),
+    url('fonts/custom-font.svg?x9t6zn#custom-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.custom-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'custom-font' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-due-date:before {
+  content: "\e945";
+}
+.icon-link-bold:before {
+  content: "\e940";
+}
+.icon-note:before {
+  content: "\e941";
+}
+.icon-post:before {
+  content: "\e942";
+}
+.icon-chain:before {
+  content: "\e943";
+}
+.icon-link:before {
+  content: "\e944";
+}
+.icon-success:before {
+  content: "\e93f";
+}
+.icon-telegram-black:before {
+  content: "\e93e";
+}
+.icon-cv-paper:before {
+  content: "\e947";
+}
+.icon-cv:before {
+  content: "\e948";
+}
+.icon-suitcase:before {
+  content: "\e93c";
+}
+.icon-job-edit:before {
+  content: "\e93d";
+}
+.icon-chat:before {
+  content: "\e939";
+}
+.icon-feedback:before {
+  content: "\e93a";
+}
+.icon-chat-bubble:before {
+  content: "\e93b";
+}
+.icon-experience:before {
+  content: "\e935";
+}
+.icon-user-experience:before {
+  content: "\e936";
+}
+.icon-title:before {
+  content: "\e937";
+}
+.icon-user-exp:before {
+  content: "\e938";
+}
+.icon-category:before {
+  content: "\e934";
+}
+.icon-notepad-4:before {
+  content: "\e933";
+}
+.icon-calendar:before {
+  content: "\e92c";
+}
+.icon-clock:before {
+  content: "\e92d";
+}
+.icon-completed:before {
+  content: "\e92e";
+}
+.icon-past:before {
+  content: "\e92f";
+}
+.icon-search-left:before {
+  content: "\e930";
+}
+.icon-search-material:before {
+  content: "\e931";
+}
+.icon-search-right:before {
+  content: "\e932";
+}
+.icon-add-user:before {
+  content: "\e928";
+}
+.icon-create:before {
+  content: "\e929";
+}
+.icon-notepad:before {
+  content: "\e92a";
+}
+.icon-plus:before {
+  content: "\e92b";
+}
+.icon-infomation:before {
+  content: "\e927";
+}
+.icon-info:before {
+  content: "\e926";
+}
+.icon-mortarboard:before {
+  content: "\e922";
+}
+.icon-sale:before {
+  content: "\e923";
+}
+.icon-size:before {
+  content: "\e924";
+}
+.icon-tag:before {
+  content: "\e925";
+}
+.icon-telephone:before {
+  content: "\e921";
+}
+.icon-address:before {
+  content: "\e91e";
+}
+.icon-company:before {
+  content: "\e91f";
+}
+.icon-gender:before {
+  content: "\e920";
+}
+.icon-search:before {
+  content: "\e91d";
+}
+.icon-alert:before {
+  content: "\e91c";
+}
+.icon-law:before {
+  content: "\e91a";
+}
+.icon-star:before {
+  content: "\e91b";
+}
+.icon-at:before {
+  content: "\e918";
+}
+.icon-sheriff:before {
+  content: "\e919";
+}
+.icon-email:before {
+  content: "\e915";
+}
+.icon-name:before {
+  content: "\e916";
+}
+.icon-phone:before {
+  content: "\e917";
+}
+.icon-admin:before {
+  content: "\e911";
+}
+.icon-circle:before {
+  content: "\e912";
+}
+.icon-settings:before {
+  content: "\e913";
+}
+.icon-shield:before {
+  content: "\e914";
+}
+.icon-close:before {
+  content: "\e910";
+}
+.icon-logout:before {
+  content: "\e90f";
+}
+.icon-toggle-menu:before {
+  content: "\e90e";
+}
+.icon-menu:before {
+  content: "\e90d";
+}
+.icon-open-menu:before {
+  content: "\e90c";
+}
+.icon-back:before {
+  content: "\e90b";
+}
+.icon-verify:before {
+  content: "\e90a";
+}
+.icon-copy:before {
+  content: "\e907";
+}
+.icon-customer:before {
+  content: "\e908";
+}
+.icon-group:before {
+  content: "\e909";
+}
+.icon-staff:before {
+  content: "\e906";
+}
+.icon-form:before {
+  content: "\e905";
+}
+.icon-support:before {
+  content: "\e904";
+}
+.icon-consulting:before {
+  content: "\e903";
+}
+.icon-dashboard:before {
+  content: "\e902";
+}
+.icon-invisible:before {
+  content: "\e900";
+}
+.icon-visible:before {
+  content: "\e901";
+}

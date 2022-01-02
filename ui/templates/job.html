@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jobs</title>
+
+    {{ template "HeadO"}} 
+    
+    {{ template "Header_link" }}
+
+    <script src="../../ui/ajax/libs/moment.js"></script>
+
+    <link rel="stylesheet" href="../../ui/css/job.search.css" />
+    <link rel="stylesheet" href="../../ui/css/job.add.css" />
+    <link rel="stylesheet" href="../../ui/css/bulk.import.css" />
+
+    <script src="../../ui/js/lib/jszip.js"></script>
+    <script src="../../ui/js/lib/xlsx.js"></script>
+
+    <script src="../../ui/js/job.search.js"></script>
+    <script src="../../ui/js/job.view.js"></script>
+    <script src="../../ui/js/user.view.js"></script>
+    <script src="../../ui/js/job.add.js"></script>
+    <script src="../../ui/js/job.repush.js"></script>
+    <script src="../../ui/js/bulk.import.js"></script>
+  </head>
+
+  <body>
+    {{ template "Header" . }}
+
+    <main>
+
+        {{ template "Job Search"}}
+
+        {{ template "Job View"}}
+
+        {{ template "Job Add"}}
+
+        {{ template "Profile"}}
+
+    </main>
+  </body>
+</html>

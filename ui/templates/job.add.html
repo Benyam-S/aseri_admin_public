@@ -1,0 +1,245 @@
+{{ define "Job Add"}}
+
+<section id="add-section">
+  <div id="add-job-container" class="card resizable-card add-container">
+    <div id="add-job-head" class="add-container-head">
+      <p>Add Job</p>
+    </div>
+
+    <div id="add-job-body" class="add-container-body">
+      <div class="row">
+        <div class="form-group col-md-12" id="add-job-title-group">
+          <label for="add-job-title"
+            >Title <span class="required-asterisk">*</span></label
+          >
+          <input type="text" class="form-control" id="add-job-title" />
+          <p class="error" id="add-title-error"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12" id="add-job-desc-group">
+          <label for="add-job-desc"
+            >Description <span class="required-asterisk">*</span></label
+          >
+          <textarea
+            id="add-job-desc"
+            class="w-100 form-control"
+            rows="5"
+          ></textarea>
+          <p class="error" id="add-desc-error"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6 removable" id="add-job-employer-group">
+          <label for="add-job-employer"
+            >Employer <span class="required-asterisk">*</span></label
+          >
+          <input type="text" class="form-control" id="add-job-employer" />
+          <p class="error" id="add-employer-error"></p>
+        </div>
+
+        <div class="form-group col-md-6 removable" id="add-contact-type-group">
+          <label for="add-contact-type"
+            >Contact Type <span class="required-asterisk">*</span></label
+          >
+          <select
+            type="text"
+            class="form-control selectpicker"
+            id="add-contact-type"
+          ></select>
+          <p class="error" id="add-contact-error"></p>
+        </div>
+
+        <div class="form-group col-md-6 removable" id="add-contact-info-group">
+          <label for="add-contact-info"
+            >Contact Info <span class="required-asterisk">*</span></label
+          >
+          <input type="text" class="form-control" id="add-contact-info" />
+          <p class="error" id="add-contact-info-error"></p>
+        </div>
+
+        <div class="form-group col-md-6 removable" id="add-contact-link-group">
+          <label for="add-contact-link">Link</label>
+          <input type="text" class="form-control" id="add-contact-link" />
+          <p class="error" id="add-link-error"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-4 removable" id="add-job-type-group">
+          <label for="add-job-type"
+            >Job Type
+            <span class="required-asterisk removable-asterisk">*</span></label
+          >
+          <select
+            class="form-control selectpicker"
+            id="add-job-type"
+            multiple
+          ></select>
+          <p class="error" id="add-type-error"></p>
+        </div>
+
+        <div
+          class="form-group col-md-4 removable"
+          id="add-education-level-group"
+        >
+          <label for="add-education-level"
+            >Education Level
+            <span class="required-asterisk removable-asterisk">*</span></label
+          >
+          <select
+            class="form-control selectpicker"
+            id="add-education-level"
+          ></select>
+          <p class="error" id="add-level-error"></p>
+        </div>
+
+        <div
+          class="form-group col-md-4 removable"
+          id="add-work-experience-group"
+        >
+          <label for="add-work-experience"
+            >Experience <span class="required-asterisk">*</span></label
+          >
+          <select
+            class="form-control selectpicker"
+            id="add-work-experience"
+          ></select>
+          <p class="error" id="add-experience-error"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6 removable" id="add-job-sector-group">
+          <label for="add-job-sector"
+            >Job Sector <span class="required-asterisk">*</span></label
+          >
+          <select
+            type="text"
+            class="form-control selectpicker"
+            id="add-job-sector"
+            multiple
+            data-live-search="true"
+          ></select>
+          <p class="error" id="add-sector-error"></p>
+        </div>
+
+        <div class="form-group col-md-6 removable" id="add-gender-group">
+          <fieldset id="add-gender-div">
+            <legend>Gender <span class="required-asterisk">*</span></legend>
+            <div class="view-radio-container">
+              <div class="view-radio">
+                <div>
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="add-gender-both"
+                    value="B"
+                  />
+                  <span> Both</span>
+                </div>
+              </div>
+
+              <div class="view-radio">
+                <div>
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="add-gender-male"
+                    value="M"
+                  />
+                  <span> Male</span>
+                </div>
+              </div>
+
+              <div class="view-radio">
+                <div>
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="add-gender-female"
+                    value="F"
+                  />
+                  <span> Female</span>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <p class="error" id="add-gender-error"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6 removable" id="add-due-date-group">
+          <label for="add-due-date"
+            >Due Date
+            <i
+              id="add-due-date-tooltip"
+              class="fas fa-info-circle info-icons"
+              data-toggle="tooltip"
+              data-placement="right"
+              title="If you want to remove default due date just clear the content of the input field"
+            ></i>
+          </label>
+          <input type="text" class="form-control" id="add-due-date" />
+          <p class="error" id="add-due-error"></p>
+        </div>
+
+        <div class="form-group col-md-6" id="add-post-type-group">
+          <label for="add-post-type">Post Type</label>
+          <select class="form-control selectpicker" id="add-post-type"></select>
+        </div>
+      </div>
+
+      <button
+        onclick="addJob(this)"
+        class="btn btn-lg btn-block btn-primary w-75"
+      >
+        <span>ADD</span>
+        <i class="custom-icon icon-job-edit"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade add-modal"
+    id="add-job-modal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="add-modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="add-modal-title">Add Job</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div id="add-modal-success" class="add-modal-success">
+            <p>You have successfully added a new job!</p>
+
+            <p>ID: <span id="added-job-id"></span></p>
+            <p>Title: <span id="added-job-title"></span></p>
+            <p>Description: <span id="added-job-desc"></span></p>
+          </div>
+
+          {{ template "Error 400" "add-modal-error" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

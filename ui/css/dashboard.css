@@ -1,0 +1,109 @@
+#dashboard-section {
+  margin: 20px 8%;
+  overflow: hidden;
+}
+
+#jobs-status {
+  overflow: hidden;
+}
+
+#jobs-status > p,
+#users-type > p,
+#bot-subscribers > p,
+#referral-visits > p {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+#jobs-status-count,
+#users-type-count {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.count-card {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 10px 10px;
+}
+
+.count-card p {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.count-display-container:hover {
+  transition: all 0.3s ease;
+  background-color: #f1f1f1;
+}
+
+#job-pending-container:hover {
+  color: orange;
+}
+
+#job-opened-container:hover {
+  color: #0073aa;
+}
+
+#job-closed-container:hover {
+  color: #1ab31a;
+}
+
+#job-declined-container:hover {
+  color: tomato;
+}
+
+#user-seeker-container:hover {
+  color: #383124;
+}
+
+#user-agent-container:hover {
+  color: #12455d;
+}
+
+#user-aseri-container:hover {
+  color: #e47575;
+}
+
+.count-display-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: solid 2px #f1f1f1;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 120px;
+  max-width: 120px;
+  height: 120px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.count-display {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+#bot-subscribers-count, 
+#referral-link-visits {
+  font-size: 200px !important;
+  text-align: center;
+}
+
+#jobs-statistics,
+#users-statistics {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}

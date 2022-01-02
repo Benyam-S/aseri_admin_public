@@ -1,0 +1,175 @@
+#profile-section {
+  display: none;
+}
+
+#profile-container {
+  width: 550px;
+  margin: 50px auto;
+}
+
+#profile-head p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px 15px;
+  border-bottom: solid 1px var(--light-border-color, #d8dbe0);
+}
+
+#user-profile-pic {
+  background-image: url("../../ui/images/user.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: 10px auto 20px;
+  cursor: pointer;
+}
+
+#user-profile-pic > div {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  visibility: hidden;
+}
+
+#user-profile-pic > div div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+#user-profile-pic:hover > div {
+  animation-name: upload-animation;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes upload-animation {
+  50% {
+    visibility: hidden;
+  }
+
+  100% {
+    background-color: rgba(134, 133, 133, 0.8);
+    visibility: visible;
+  }
+}
+
+#user-profile-pic > div .material-icons {
+  font-size: 30px;
+  color: var(--primary-color-shade1, #006391);
+}
+
+#user-profile-pic > div span:nth-child(2) {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#profile-body {
+  padding: 15px 20px 20px;
+}
+
+#profile-body > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 10px;
+}
+
+#profile-body > button span {
+  margin-right: 5px;
+}
+
+#profile-body label {
+  font-weight: 600;
+  padding-left: 2px;
+}
+
+#profile-disabled-group {
+  flex-direction: row;
+  margin-top: 20px;
+  padding: 15px 10px;
+}
+
+#profile-delete-div {
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+#profile-delete-div > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#profile-delete-div > div:nth-child(1) a,
+#profile-delete-div > div:nth-child(1) p {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  margin: 0;
+}
+
+#profile-delete-div .material-icons {
+  cursor: pointer;
+  color: var(--primary-color-shade1, #006391);
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+#profile-delete-div .material-icons:hover {
+  color: black;
+}
+
+#delete-profile-info {
+  border-top: solid 1px var(--light-border-color, #d8dbe0);
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  text-align: justify;
+  font-size: 14px;
+}
+
+#profile-disabled-group input {
+  background-color: white;
+}
+
+#profile-container .error-500 i {
+  font-size: 70px;
+}
+
+#profile-container .error-500 p:nth-child(1) {
+  font-size: 40px;
+}
+
+#profile-container .error-500 p:nth-child(2) {
+  font-size: 25px;
+  margin-bottom: 45px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++ EDIT MODAL +++++++++++++++++++++++++++++++++++++ */
+
+#profile-password-container {
+  padding: 0 5px;
+}
+
+#profile-password-container p:nth-child(1) {
+  color: var(--error-color, #e62600);
+  font-weight: 600;
+}
+
+#profile-password-container p:nth-child(2) {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+#profile-password-container label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}

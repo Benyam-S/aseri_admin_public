@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+
+    {{ template "HeadO"}} 
+    
+    {{ template "Header_link" }}
+
+    <script src="../../ui/js/lib/highstock.js"></script>
+    <script src="../../ui/js/lib/grid-light.js"></script>
+
+    <script src="../../ui/js/dashboard.js"></script>
+    <link rel="stylesheet" href="../../ui/css/dashboard.css" />
+  </head>
+
+  <body>
+    {{ template "Header" . }}
+
+    <main>
+      <section id="dashboard-section">
+        <div id="jobs-status">
+          <p>Jobs Count</p>
+          <div id="jobs-status-count" class="row">
+            <div
+              id="job-pending-card"
+              class="card count-card"
+              style="background-color: orange"
+            >
+              <div id="job-pending-container" class="count-display-container">
+                <span id="job-pending-count" class="count-display"></span>
+              </div>
+              <p>Pending</p>
+            </div>
+
+            <div
+              id="job-opened-card"
+              class="card count-card"
+              style="background-color: #0073aa"
+            >
+              <div id="job-opened-container" class="count-display-container">
+                <span id="job-opened-count" class="count-display"></span>
+              </div>
+              <p>Opened</p>
+            </div>
+
+            <div
+              id="job-closed-card"
+              class="card count-card"
+              style="background-color: #1ab31a"
+            >
+              <div id="job-closed-container" class="count-display-container">
+                <span id="job-closed-count" class="count-display"></span>
+              </div>
+              <p>Closed</p>
+            </div>
+
+            <div
+              id="job-declined-card"
+              class="card count-card"
+              style="background-color: tomato"
+            >
+              <div id="job-declined-container" class="count-display-container">
+                <span id="job-declined-count" class="count-display"></span>
+              </div>
+              <p>Declined</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="jobs-statistics" style="width: 100%; height: 500px"></div>
+
+        <div id="users-type">
+          <p>Users Count</p>
+          <div id="users-type-count" class="row">
+            <div
+              id="user-seeker-card"
+              class="card count-card"
+              style="background-color: #383124"
+            >
+              <div id="user-seeker-container" class="count-display-container">
+                <span id="user-seeker-count" class="count-display"></span>
+              </div>
+              <p>Job Seeker</p>
+            </div>
+
+            <div
+              id="user-agent-card"
+              class="card count-card"
+              style="background-color: #12455d"
+            >
+              <div id="user-agent-container" class="count-display-container">
+                <span id="user-agent-count" class="count-display"></span>
+              </div>
+              <p>Agent</p>
+            </div>
+
+            <div
+              id="user-aseri-card"
+              class="card count-card"
+              style="background-color: #e47575"
+            >
+              <div id="user-aseri-container" class="count-display-container">
+                <span id="user-aseri-count" class="count-display"></span>
+              </div>
+              <p>Employer</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="users-statistics" style="width: 100%; height: 500px"></div>
+
+        <div id="referral-visits">
+          <p>Referral Link Visits</p>
+          <input type="hidden" id="hidden-referral-visits" />
+          <p id="referral-link-visits">0</p>
+        </div>
+
+        <div id="bot-subscribers">
+          <p>Bot Subscribers</p>
+          <input type="hidden" id="hidden-subscribers-count" />
+          <p id="bot-subscribers-count">0</p>
+        </div>
+      </section>
+
+      {{ template "Profile"}}
+    </main>
+  </body>
+</html>

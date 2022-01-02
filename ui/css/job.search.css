@@ -1,0 +1,41 @@
+.view-employer:hover {
+  color: var(--primary-color, #0073aa);
+}
+
+#status-menu {
+  position: fixed;
+  margin-left: -60px;
+  display: none;
+}
+
+#status-menu p {
+  font-size: 14px;
+  padding: 6px 30px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}
+
+#status-menu .material-icons {
+  margin-right: 10px;
+  font-size: 22px;
+  color: var(--icon-color-shade, #787878);
+}
+
+#status-menu p:hover {
+  background-color: var(--background-color, #f1f1f1);
+}
+
+#status-menu p:hover .material-icons {
+  color: var(--primary-color, #0073aa);
+}
+
+.selected-status {
+  background-color: var(--background-color, #f1f1f1) !important;
+}
+
+.selected-status .material-icons {
+  color: var(--primary-color, #0073aa) !important;
+}

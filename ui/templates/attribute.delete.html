@@ -1,0 +1,57 @@
+{{ define "Attribute Delete"}}
+
+<!-- Modal -->
+<div
+  class="modal fade delete-modal"
+  id="delete-attribute"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="delete-attribute-title"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delete-attribute-title">
+          Delete Job Attribute
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <form class="modal-body">
+        <div id="delete-attribute-container" class="delete-container">
+          <div>
+            <p>
+              Are you sure you want to delete the selected job attribute with an
+              ID
+              <span id="delete-attribute-id"></span> under
+              <span id="delete-attribute-category"></span>!
+            </p>
+          </div>
+        </div>
+
+        {{ template "Error 400" "delete-error-div" }}
+      </form>
+
+      <div class="modal-footer">
+        <button
+          onclick="deleteAttribute(this)"
+          id="delete-btn"
+          type="button"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

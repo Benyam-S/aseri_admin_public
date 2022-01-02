@@ -1,0 +1,31 @@
+#edit-disabled-group {
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 15px 10px;
+}
+
+#edit-disabled-group input {
+  background-color: white;
+}
+
+/* +++++++++++++++++++++++++++++++++++++ EDIT MODAL +++++++++++++++++++++++++++++++++++++ */
+
+#edit-password-container {
+  padding: 0 5px;
+}
+
+#edit-password-container p:nth-child(1) {
+  color: var(--error-color, #e62600);
+  font-weight: 600;
+}
+
+#edit-password-container p:nth-child(2) {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+#edit-password-container label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}

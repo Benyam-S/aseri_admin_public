@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Staff</title>
+
+    {{ template "HeadO"}} 
+
+    {{ template "Header_link" }}
+
+    <link rel="stylesheet" href="../../ui/css/staff.search.css">
+    <link rel="stylesheet" href="../../ui/css/staff.edit.css">
+    <link rel="stylesheet" href="../../ui/css/staff.add.css">
+
+    <script src="../../ui/js/staff.search.js"></script>
+    <script src="../../ui/js/staff.add.js"></script>
+    <script src="../../ui/js/staff.view.js"></script>
+    <script src="../../ui/js/staff.edit.js"></script>
+    <script src="../../ui/js/staff.delete.js"></script>
+
+</head>
+
+<body>
+
+    {{ template "Header" . }}
+
+    <main>
+
+        {{ template "Staff Search" }}
+
+        {{ template "Staff View" }}
+
+        {{ template "Staff Delete" }}
+
+        {{ template "Staff Add" }}
+
+        {{ template "Staff Edit" }}
+
+        {{ template "Profile" }}
+
+    </main>
+
+</body>
+
+</html>

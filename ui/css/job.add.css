@@ -1,0 +1,25 @@
+.add-container {
+  width: 750px;
+  margin: 50px auto;
+}
+
+#add-gender-div {
+  border: solid 1px var(--light-border-color, #d8dbe0);
+  border-radius: 3px;
+  padding: 6px 15px 10px;
+}
+
+#add-gender-div legend {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 10px;
+  width: auto;
+}
+
+/* +++++++++++++++++++++++++++++++++++++ media query +++++++++++++++++++++++++++++++++++++ */
+
+@media (max-width: 800px) {
+  .resizable-card {
+    width: 550px;
+  }
+}
